@@ -51,7 +51,7 @@ downloader --config path/to/config
 ```ts
 import { downloader, downloadFiles } from 'https://deno.land/x/downloader/mod.ts'
 
-await downloader('path/to/config')
+await downloader({ config: 'path/to/config' })
 
 // or
 
