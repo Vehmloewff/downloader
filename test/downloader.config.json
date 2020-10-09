@@ -1,0 +1,33 @@
+{
+	"$schema": "../schema.json",
+	"dest": "test/dest",
+	"files": [
+		{
+			"url": "https://deno.land/x/hackle/mod.ts",
+			"name": "hackle.ts"
+		},
+		{
+			"url": "./schema.json"
+		},
+		{
+			"url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=clement-h-95YRwf6CNw8-unsplash.jpg",
+			"name": "code.jpg"
+		},
+		{
+			"url": "https://codeload.github.com/Vehmloewff/custom-format/zip/1.0.1",
+			"unzip": {
+				"exclude": "**/*",
+				"include": "*README*",
+				"renameArtifacts": {
+					"README.md": "custom-format-readme.md"
+				},
+				"nest": false
+			}
+		},
+		{
+			"url": "https://codeload.github.com/Vehmloewff/dirt/zip/v0.2.0",
+			"name": "dirt",
+			"unzip": true
+		}
+	]
+}
