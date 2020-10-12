@@ -56,7 +56,7 @@ export async function downloader(options: DownloaderOptions) {
 	if (!config.dest) hackle.error(`Couldn't find the required 'dest' key in ${file}`)
 	if (!config.files || !config.files.length) hackle.warn(`No files to download were found in ${file}.  Exiting...`)
 
-	downloadFiles(config)
+	await downloadFiles(config)
 }
 
 export async function downloadFiles(instructions: DownloadInstructions) {
