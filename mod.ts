@@ -99,15 +99,12 @@ async function unzip(file: string, dest: string, name: string, url: string, unzi
 	const zip = await readZip(file)
 	const files = Object.keys(zip.files())
 
-	for (let wholeFile of files) {
-		const innerZip = zip.file(wholeFile)
-
-		// The relative path inside the zip.  `wholeFile` is the relative path + the name of the zip
-		let file = wholeFile.split('/').slice(1).join('/')
+	for (let file of files) {
+		const innerZip = zip.file(file)
 
 		if (!innerZip || !fileWasIncluded(file, unzipOptions.include || '**/*', unzipOptions.exclude || [])) continue
 
-		hackle.scope('d-write')(wholeFile)
+		hackle.scope('d-write')(file)
 
 		if (unzipOptions.renameArtifacts && unzipOptions.renameArtifacts[file]) file = unzipOptions.renameArtifacts[file]
 
