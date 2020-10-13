@@ -1,4 +1,4 @@
-import 'https://deno.land/x/hackle@v1.0.0/init.ts'
+import 'https://deno.land/x/hackle/init.ts'
 import { readZip } from 'https://deno.land/x/jszip@0.7.0/mod.ts'
 import { exists, copy } from 'https://deno.land/std@0.71.0/fs/mod.ts'
 import { join, basename, dirname, isAbsolute, globToRegExp } from 'https://deno.land/std@0.71.0/path/mod.ts'
